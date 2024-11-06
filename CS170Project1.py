@@ -148,7 +148,7 @@ def graph_search(puzzle, algorithm_number):
         if queue_size > max_queue_size: # set queue max based on current size
             max_queue_size = queue_size
 
-
+#euclidean() calculates the Euclidean distance for each tile from its goal position
 def euclidean(current_puzzle):
     goal_puzzle = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
     total_distance = 0  # accumulate distance
@@ -165,6 +165,7 @@ def euclidean(current_puzzle):
 
     return total_distance  # return total eucl distance
 
+#misplaced() counts tiles that are not in their goal position
 def misplaced(current_puzzle):
     goal_puzzle = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
     misplaced_tile_count = 0 # accumulate misplaced tiles
