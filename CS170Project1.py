@@ -40,6 +40,11 @@ def main():
     print(graph_search(puzzle, algorithm_number))
 
 
+#expands the current node by moving the blank tile in all four directions (up, down, left, right)
+#uses copy.deepcopy to make a new puzzle state without altering the original puzzle
+#checks if the new puzzle state has already been visited to avoid loops
+#assigns the new puzzle state to the corresponding child node
+
 def node_expand(curr_node, traversed_states):  # take node and branch each direction based on location of the blank tile
     blank_tile_row, blank_tile_column = next(
         (i, j) for i in range(len(curr_node.puzzle)) for j in range(len(curr_node.puzzle)) if int(curr_node.puzzle[i][j]) == 0
