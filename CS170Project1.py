@@ -74,8 +74,15 @@ def node_expand(curr_node, traversed_states):  # take node and branch each direc
 
     return curr_node # new curr node with children
 
+
+#defines a custom sort key based on depth and heuristic cost, favoring lower values to ensure optimal path selection
 def custom_sort_key(node):
     return (node.depth + node.heuristic_cost, node.depth)
+
+
+#implements the main search algorithm based on the chosen heuristic
+#manages a queue to explore nodes, keeping track of maximum queue size and total nodes expanded
+#when the goal is reached, it returns statistics on expanded nodes, queue size, and goal depth
 
 def graph_search(puzzle, algorithm_number):
     # traversal queue and visited states tracking
